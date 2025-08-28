@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.Result = new System.Windows.Forms.TextBox();
+            this.resultText = new System.Windows.Forms.TextBox();
             this.createMusic = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -193,7 +193,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.Result);
+            this.groupBox2.Controls.Add(this.resultText);
             this.groupBox2.Location = new System.Drawing.Point(413, 34);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(335, 366);
@@ -201,14 +201,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "결과보기";
             // 
-            // Result
+            // resultText
             // 
-            this.Result.Location = new System.Drawing.Point(26, 52);
-            this.Result.Multiline = true;
-            this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(287, 291);
-            this.Result.TabIndex = 4;
-            this.Result.TextChanged += new System.EventHandler(this.Result_TextChanged);
+            this.resultText.Location = new System.Drawing.Point(26, 52);
+            this.resultText.Multiline = true;
+            this.resultText.Name = "resultText";
+            this.resultText.Size = new System.Drawing.Size(287, 291);
+            this.resultText.TabIndex = 4;
+            this.resultText.TextChanged += new System.EventHandler(this.Result_TextChanged);
             // 
             // createMusic
             // 
@@ -223,9 +223,9 @@
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Location = new System.Drawing.Point(0, 28);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 30);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -237,7 +237,7 @@
             this.설정ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip2.Size = new System.Drawing.Size(800, 30);
             this.menuStrip2.TabIndex = 4;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -248,7 +248,7 @@
             this.저장하기ToolStripMenuItem,
             this.끝내기ToolStripMenuItem});
             this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
-            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
             this.파일ToolStripMenuItem.Text = "파일";
             // 
             // historyBtn
@@ -276,7 +276,7 @@
             this.테마바꾸기ToolStripMenuItem,
             this.언어선택ToolStripMenuItem});
             this.설정ToolStripMenuItem.Name = "설정ToolStripMenuItem";
-            this.설정ToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.설정ToolStripMenuItem.Size = new System.Drawing.Size(53, 26);
             this.설정ToolStripMenuItem.Text = "설정";
             // 
             // 테마바꾸기ToolStripMenuItem
@@ -330,7 +330,7 @@
         private System.Windows.Forms.Button createMusic;
         private System.Windows.Forms.ComboBox genre;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.TextBox Result;
+        private System.Windows.Forms.TextBox resultText;
         private System.Windows.Forms.MenuStrip menuStrip2;
         private System.Windows.Forms.ToolStripMenuItem 파일ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historyBtn;

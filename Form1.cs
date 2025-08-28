@@ -12,13 +12,17 @@ namespace MusicTeller
 {
     public partial class Form1: Form
     {
-        private string GenerateLyrics(string username, string goal, string genre, string mood, string energy)
-        {
-            // 이 부분에 실제 AI API 호출 로직 들어가야 함
-            // 지금은 예시로 단순 문자열 반환
-            return $"[AI Generated Lyrics]\n사용자: {username}\n목표: {goal}\n장르: {genre}\n무드: {mood}\n에너지: {energy}\n\n🎵 가사 예시: 라라라라...";
-        }
+      private async Task<string> GenerateLyrics(string username, string goal, string genre, string mood, string energy)
+{
+   // GptApi api = new GptApi();
+    string userInput = $"유저이름:{username}, 오늘의 목표: {goal}, " +
+        $"노래 장르:{genre}, 오늘의 기분:{mood}, " +
+        $"에너지 레벨:{energy}";
 
+   // string result = await api.GetSongAsync(userInput) ?? "AI 응답이 없습니다";
+
+    return userInput;
+}
 
         public Form1()
         {
@@ -45,7 +49,7 @@ namespace MusicTeller
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
             string goal = this.goal.Text;
             string genre = this.genre.SelectedItem.ToString();
@@ -54,10 +58,10 @@ namespace MusicTeller
             string username = this.username.Text;
 
             // AI 가사 생성
-            string lyrics = GenerateLyrics(username, goal, genre, mood, energyLevel);
+            string lyrics = await GenerateLyrics(username, goal, genre, mood, energyLevel);
 
             // tbResult 텍스트박스에 출력
-            Result.Text = lyrics;
+            resultText.Text = lyrics;
         }
 
         private void goal_TextChanged(object sender, EventArgs e)
