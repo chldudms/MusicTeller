@@ -254,20 +254,21 @@
             // historyBtn
             // 
             this.historyBtn.Name = "historyBtn";
-            this.historyBtn.Size = new System.Drawing.Size(222, 26);
+            this.historyBtn.Size = new System.Drawing.Size(224, 26);
             this.historyBtn.Text = "내역 불러오기";
             this.historyBtn.Click += new System.EventHandler(this.이전에ToolStripMenuItem_Click);
             // 
             // 저장하기ToolStripMenuItem
             // 
             this.저장하기ToolStripMenuItem.Name = "저장하기ToolStripMenuItem";
-            this.저장하기ToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.저장하기ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.저장하기ToolStripMenuItem.Text = "현재 내용 저장하기";
+            this.저장하기ToolStripMenuItem.Click += new System.EventHandler(this.저장하기ToolStripMenuItem_Click);
             // 
             // 끝내기ToolStripMenuItem
             // 
             this.끝내기ToolStripMenuItem.Name = "끝내기ToolStripMenuItem";
-            this.끝내기ToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
+            this.끝내기ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.끝내기ToolStripMenuItem.Text = "끝내기";
             // 
             // 설정ToolStripMenuItem

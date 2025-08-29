@@ -16,13 +16,15 @@ using System.Net.Http;
 using System.Text.Json;
 using Newtonsoft.Json.Linq;
 using System.Net;
+using System.IO;
 
 
 namespace MusicTeller
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
 
+       public string songResult;
 
 
         public Form1()
@@ -68,6 +70,8 @@ namespace MusicTeller
                                $"에너지 레벨:{energyLevel}";
 
             string lyrics = GenerateSong(username, goal, genre, mood, energyLevel);
+
+            songResult = lyrics;
 
             resultText.Text = lyrics;
         }
@@ -144,6 +148,27 @@ namespace MusicTeller
             return lyrics;
         }
 
+        public void LoadHistory(string history)
+        {
+            //20070327 | 사주사주사주 | 메시지메시지메시지
+            string goal = this.goal.Text;
+            string genre = this.genre.SelectedItem?.ToString() ?? "";
+            string mood = this.mood.SelectedItem?.ToString() ?? "";
+            string energyLevel = this.energyLevel.SelectedItem?.ToString() ?? "";
+            string username = this.username.Text;
+
+            string userInput = $"유저이름:{username}, 오늘의 목표:{goal}, " +
+                               $"노래 장르:{genre}, 오늘의 기분:{mood}, " +
+                               $"에너지 레벨:{energyLevel}";
+
+            string result = GenerateSong(username, goal, genre, mood, energyLevel);
+
+            //string saju = result.Split('|')[0];
+            //string message = result.Split('|')[1];
+            //tbResult.Text = $"{birthday} {birthhour}{Environment.NewLine}"
+            // + $"{saju}{Environment.NewLine}"
+            // + $"{message}";
+        }
 
 
         private void goal_TextChanged(object sender, EventArgs e)
@@ -163,7 +188,44 @@ namespace MusicTeller
 
         private void 이전에ToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            History formHistory = Application.OpenForms["History"] as History;
+            if (formHistory != null)
+            {
+                formHistory.Activate();
 
+            }
+            else
+            {
+                formHistory = new History(this);
+                formHistory.Show();
+
+            }
+        }
+
+
+            private void SaveHistory(string history)
+        {
+            try
+            {
+                string filename = "history.csv";
+                File.AppendAllText(filename, history +"-------------------------"+ Environment.NewLine);
+            }
+            catch (UnauthorizedAccessException ex)
+            {
+                MessageBox.Show($"권한 없음 오류 발생 \n{ex.Message}", "권한 오류");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"알 수 없는 오류 발생 \n{ex.Message}", "알 수 없는 오류");
+
+            }
+        }
+
+        private void 저장하기ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveHistory(songResult);
         }
     }
-}
+
+        }
+    
