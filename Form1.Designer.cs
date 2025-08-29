@@ -51,6 +51,8 @@
             this.설정ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.테마바꾸기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.언어선택ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.musicTeller정보ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.menuStrip2.SuspendLayout();
@@ -234,6 +236,7 @@
             this.menuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.파일ToolStripMenuItem,
+            this.도움말ToolStripMenuItem,
             this.설정ToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
@@ -292,6 +295,21 @@
             this.언어선택ToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.언어선택ToolStripMenuItem.Text = "언어 선택";
             // 
+            // 도움말ToolStripMenuItem
+            // 
+            this.도움말ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.musicTeller정보ToolStripMenuItem});
+            this.도움말ToolStripMenuItem.Name = "도움말ToolStripMenuItem";
+            this.도움말ToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.도움말ToolStripMenuItem.Text = "도움말";
+            // 
+            // musicTeller정보ToolStripMenuItem
+            // 
+            this.musicTeller정보ToolStripMenuItem.Name = "musicTeller정보ToolStripMenuItem";
+            this.musicTeller정보ToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.musicTeller정보ToolStripMenuItem.Text = "musicTeller정보";
+            this.musicTeller정보ToolStripMenuItem.Click += new System.EventHandler(this.musicTeller정보ToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -341,6 +359,8 @@
         private System.Windows.Forms.ToolStripMenuItem 저장하기ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 끝내기ToolStripMenuItem;
         private System.Windows.Forms.ComboBox energyLevel;
+        private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem musicTeller정보ToolStripMenuItem;
     }
 }
 
