@@ -32,7 +32,7 @@ namespace MusicTeller
             InitializeComponent();
 
 
-            resultText.Multiline = true;           // 여러 줄 입력 가능
+            resultText.Multiline = true;           // 여러 줄 입력 
             resultText.ScrollBars = ScrollBars.Vertical;  // 길면 스크롤
             resultText.WordWrap = true;
         }
@@ -123,7 +123,7 @@ namespace MusicTeller
             else if (energy == "1") energyLine = "오늘은 편하게 쉬어가자~";
             else energyLine = "오늘 하루 힘내자~";
 
-            // 4. 목표 강조
+            // 4. 목표
             string goalLine = $"오늘의 목표: {goal}을(를) 이뤄보자~";
 
             // 5. 이름 포함
@@ -150,7 +150,7 @@ namespace MusicTeller
 
         public void LoadHistory(string history)
         {
-            //20070327 | 사주사주사주 | 메시지메시지메시지
+        
             string goal = this.goal.Text;
             string genre = this.genre.SelectedItem?.ToString() ?? "";
             string mood = this.mood.SelectedItem?.ToString() ?? "";
@@ -162,12 +162,6 @@ namespace MusicTeller
                                $"에너지 레벨:{energyLevel}";
 
             string result = GenerateSong(username, goal, genre, mood, energyLevel);
-
-            //string saju = result.Split('|')[0];
-            //string message = result.Split('|')[1];
-            //tbResult.Text = $"{birthday} {birthhour}{Environment.NewLine}"
-            // + $"{saju}{Environment.NewLine}"
-            // + $"{message}";
         }
 
 
@@ -208,7 +202,8 @@ namespace MusicTeller
             try
             {
                 string filename = "history.csv";
-                File.AppendAllText(filename, history +"-------------------------"+ Environment.NewLine);
+                File.AppendAllText(filename, history + Environment.NewLine +
+                      "-------------------------" + Environment.NewLine);
             }
             catch (UnauthorizedAccessException ex)
             {
@@ -224,6 +219,12 @@ namespace MusicTeller
         private void 저장하기ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveHistory(songResult);
+        }
+
+        private void musicTeller정보ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAbout formAbout = new FormAbout();
+            formAbout.ShowDialog();
         }
     }
 
